@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -84,6 +84,7 @@
                 <div class="toggle"></div>
               </label>
               <!-- end Toggle Dark Mode -->
+
               <!-- Toggle Menu Button -->
               <button class="menu-dots">
                 <span></span>
@@ -184,33 +185,33 @@
                   <h1>Web Dev. Freelance</h1>
                   <ul class="list-inline-pills mt-3">
                     <li>
-                      <i class="fa-brands fa-html5 pe-2"></i> HTML5 & CSS3
+                      <i class="fa-brands fa-html5 pe-2" style="color: rgb(211, 95, 0)"></i> HTML5 & CSS3
                       <div class="d-inline-block font-family-mono font-small"></div>
                     </li>
                     <li>
-                      <i class="fa-brands fa-bootstrap pe-2"></i> Bootstrap
+                      <i class="fa-brands fa-bootstrap pe-2" style="color: rgb(88, 0, 170)"></i> Bootstrap
                       <div class="d-inline-block font-family-mono font-small"></div>
                     </li>
                     <li>
-                      <i class="fa-brands fa-js-square pe-2"></i> JavaScripts
+                      <i class="fa-brands fa-js-square pe-2" style="color: rgb(233, 198, 0)"></i> JavaScripts
                       <div class="d-inline-block font-family-mono font-small"></div>
                     </li>
                   </ul>
                   <ul class="list-inline-pills mt-1">
                     <li>
-                      <i class="fa-brands fa-php pe-2"></i> CI & Laravel
+                      <i class="fa-brands fa-php pe-2" style="color: rgb(8, 0, 122)"></i> CI & Laravel
                       <div class="d-inline-block font-family-mono font-small"></div>
                     </li>
                     <li>
-                      <i class="fa-brands fa-node pe-2"></i> Node JS
+                      <i class="fa-brands fa-node pe-2" style="color: rgb(4, 122, 0)"></i> Node JS
                       <div class="d-inline-block font-family-mono font-small"></div>
                     </li>
                     <li>
-                      <i class="fa-brands fa-wordpress pe-1"></i> Wordpress
+                      <i class="fa-brands fa-wordpress pe-1" style="color: rgb(0, 114, 221)"></i> Wordpress
                       <div class="d-inline-block font-family-mono font-small"></div>
                     </li>
                     <li>
-                      <i class="fa-brands fa-figma pe-1"></i> Figma
+                      <i class="fa-brands fa-figma pe-1" style="color: rgb(126, 0, 0)"></i> Figma
                       <div class="d-inline-block font-family-mono font-small"></div>
                     </li>
                   </ul>
@@ -571,51 +572,6 @@
             <!-- end section-box -->
             <!-- end Resume section -->
 
-            <!-- Clients section -->
-            <div class="section-box mt-4" id="clients">
-              <h6 class="title-heading mb-4" data-backdrop-text="Clients">My Awesome Clients</h6>
-              <div class="swiper clients-swiper">
-                <div class="swiper-wrapper">
-                  <!-- Client box 1 -->
-                  <div class="swiper-slide client-box">
-                    <a href="#">
-                      <img src="assets/images/client-1.png" alt="" />
-                    </a>
-                  </div>
-                  <!-- Client box 2 -->
-                  <div class="swiper-slide client-box">
-                    <a href="#">
-                      <img src="assets/images/client-2.png" alt="" />
-                    </a>
-                  </div>
-                  <!-- Client box 3 -->
-                  <div class="swiper-slide client-box">
-                    <a href="#">
-                      <img src="assets/images/client-3.png" alt="" />
-                    </a>
-                  </div>
-                  <!-- Client box 4 -->
-                  <div class="swiper-slide client-box">
-                    <a href="#">
-                      <img src="assets/images/client-4.png" alt="" />
-                    </a>
-                  </div>
-                  <!-- Client box 5 -->
-                  <div class="swiper-slide client-box">
-                    <a href="#">
-                      <img src="assets/images/client-5.png" alt="" />
-                    </a>
-                  </div>
-                  <!-- Client box 6 -->
-                  <div class="swiper-slide client-box">
-                    <a href="#">
-                      <img src="assets/images/client-6.png" alt="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end section-box -->
             <!-- end Clients section -->
 
             <!-- Blog section -->
@@ -759,5 +715,22 @@
     <script src="assets/plugins/jquery.min.js"></script>
     <script src="assets/plugins/plugins.js"></script>
     <script src="assets/js/functions.js"></script>
+    <script>
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const toggle = document.querySelector('.toggle');
+
+      function toggleDarkMode() {
+        if (darkModeToggle.checked) {
+          document.body.classList.add('dark-mode');
+          toggle.classList.add('active');
+        } else {
+          // Nonaktifkan Dark Mode
+          document.body.classList.remove('dark-mode');
+          toggle.classList.remove('active');
+        }
+      }
+      darkModeToggle.addEventListener('change', toggleDarkMode);
+      toggleDarkMode();
+    </script>
   </body>
 </html>
