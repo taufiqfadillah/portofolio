@@ -407,7 +407,7 @@ h6 {
   color: rgb(214, 214, 214);
 }
 .dark-mode .scroll-circle {
-  background-color: #181818;
+  background-color: #18181800;
 }
 .dark-mode .scroll-circle .circle-border {
   border: 1px dashed white;
