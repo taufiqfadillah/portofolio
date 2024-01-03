@@ -1307,6 +1307,53 @@ button.mfp-close:hover {
     margin-bottom: 0;
   }
 }
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+.skeleton-loading {
+  animation: skeleton-loading 1.5s infinite;
+  background-image: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  border-radius: 4px;
+  display: flex;
+}
+.skeleton-image {
+  height: 150px;
+  width: 100%;
+}
+.skeleton-text {
+  height: 20px;
+  margin-top: 10px;
+  width: 80%;
+}
+/* .skeleton {
+  position: relative;
+}
+.skeleton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200%;
+  animation: skeleton 1s infinite reverse duration timing-function delay iteration-count direction fill-mode;
+}
+@keyframes skeleton {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100%;
+  }
+} */
 .filter ul {
   margin: 0;
   padding: 0;

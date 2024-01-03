@@ -1,19 +1,41 @@
 // 01.Blog
-
 document.addEventListener('DOMContentLoaded', function () {
   const articlesPerLoad = 4;
   let currentLoadedArticles = 0;
   let allArticlesData = [];
 
   function fetchArticles() {
+    displaySkeletonLoading(articlesPerLoad);
+
     fetch('https://dashboard.taufiqproject.my.id/blogs')
       .then((response) => response.json())
       .then((data) => {
         allArticlesData = data;
+        removeSkeletonLoading();
         displayArticles(currentLoadedArticles, articlesPerLoad);
         setupCategoryFilter();
       })
       .catch((error) => console.error('Error fetching articles:', error));
+  }
+
+  function displaySkeletonLoading(count) {
+    const blogContainer = document.getElementById('blog-container');
+    blogContainer.innerHTML = '';
+
+    for (let i = 0; i < count; i++) {
+      const skeletonHTML = `
+        <div class="blog-post-box skeleton-loading">
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+      `;
+      blogContainer.insertAdjacentHTML('beforeend', skeletonHTML);
+    }
+  }
+
+  function removeSkeletonLoading() {
+    const skeletonElements = document.querySelectorAll('.skeleton-loading');
+    skeletonElements.forEach((element) => element.remove());
   }
 
   function truncateText(text, limit) {
